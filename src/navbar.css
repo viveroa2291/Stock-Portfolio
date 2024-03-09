@@ -8,3 +8,20 @@
     width: 75%;
     margin-top: 1rem;
 }
+.nav-container {
+    position: absolute;
+    right: 0;
+    margin-right: 5rem;
+}
+.links {
+    margin-left: 1rem;
+    padding: 10px;
+    background-color: lightgreen;
+    border-radius: 5px;
+    border: solid 2px white;
+}
+.about-button, .login-button {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}

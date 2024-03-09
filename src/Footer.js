@@ -1,10 +1,10 @@
 import React from "react";
-import {Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import logo from './images/logo.png';
-import './navbar.css';
-function Navbar () {
-    return (
-        <div className="navbar-body">
+import './footer.css';
+function Footer() {
+    return(
+        <div className="footer">
             <span>
                 <Link className="home-logo" to="/"><img className="logo" src={logo} alt="This will be the main logo"/></Link>
             </span>
@@ -15,4 +15,4 @@ function Navbar () {
         </div>
     )
 }
-export default Navbar;
+export default Footer;
