@@ -1,0 +1,9 @@
+.body-message {
+    text-align: center;
+}
+.body-list {
+    text-align: center;
+}
+.body-list > ul {
+    display: inline-block;
+}
