@@ -4,15 +4,17 @@ function Signup() {
     return (
         <div>
             <form>
-                <label>First Name:</label>
+                <label>First Name:</label><label>Last Name:</label>
+                <span className="signup-names">
+                    
+                    <br/> 
+                    <input></input>
+                    
+                    <br/>
+                    <input></input> 
+                </span>
                 <br/>
-                <input></input>
-                <br/>
-                <label>Last Name:</label>
-                <br/>
-                <input></input>
-                <br/>
-                <label>username:</label>
+                <label>Username:</label>
                 <br/>
                 <input></input>
                 <br/>

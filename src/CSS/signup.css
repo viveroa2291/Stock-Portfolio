@@ -1,3 +1,9 @@
 form {
     text-align: center;
+    margin-top: 5rem;
+}
+.signup-names {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
