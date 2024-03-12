@@ -6,10 +6,9 @@ function Signup() {
             <form>
                 <label>First Name:</label><label>Last Name:</label>
                 <span className="signup-names">
-                    
                     <br/> 
                     <input></input>
-                    
+                  
                     <br/>
                     <input></input> 
                 </span>

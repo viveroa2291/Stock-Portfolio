@@ -5,6 +5,10 @@
     text-align: center;
     margin-top: 5rem;
 }
-button {
-    margin-top: 1rem;
+.signup-button {
+    color: white;
+    text-decoration: none;
+}
+.password-input, .email-input {
+    text-align: center;
 }
