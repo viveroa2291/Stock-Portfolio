@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # server
-/server
+server
 /server/Server.js
