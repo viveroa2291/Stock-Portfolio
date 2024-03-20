@@ -5,9 +5,10 @@
     margin-right: auto;
 }
 form {
-    margin-top: 5rem;
+    margin-top: 3rem;
 }
 label { 
+    margin-top: .5rem;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .create-account {
@@ -22,7 +23,7 @@ label {
     align-items: center;
 }
 .login-section {
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-align: center;
 
 }
