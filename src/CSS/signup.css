@@ -5,10 +5,11 @@
     margin-right: auto;
 }
 form {
-    margin-top: 3rem;
+    margin-top: 1rem;
 }
 label { 
     margin-top: .5rem;
+    font-size: 15px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .create-account {
