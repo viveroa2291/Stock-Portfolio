@@ -60,10 +60,16 @@ function Signup() {
                         <input id="email" name="email" onChange={handleInputChange}/>
                         <label htmlFor='password'>Password:</label>
                         <input type={formData.showPassword ? "text" : "password"} id="password" name="password" value={formData.password} onChange={handleInputChange}/>
-                        <input type="checkbox" id="showpassword" name="showPassword" checked={formData.showPassword} onChange={handleShowPasswordToggle} />
+                        <label>
+                            <input className="checkbox" type="checkbox" id="showpassword" name="showPassword" checked={formData.showPassword} onChange={handleShowPasswordToggle} />
+                            Show Password
+                        </label>
                         <label htmlFor='cpassword'>Confirm Password:</label>
                         <input type={formData.showSecondPassword ? "text" : "password"} id="cpassword" name="cpassword" value={formData.cpassword} onChange={handleInputChange}/>
-                        <input type="checkbox" id="showSecondPassword" name="showSecondPassword" checked={formData.showSecondPassword} onChange={handleSecondShowPasswordToggle} />
+                        <label>                            
+                            <input className="checkbox" type="checkbox" id="showSecondPassword" name="showSecondPassword" checked={formData.showSecondPassword} onChange={handleSecondShowPasswordToggle} />
+                            Show Password
+                        </label>
                     </div>                
                     <button type="submit" className="btn btn-dark create-account">Create An Account</button>
                 </form>
