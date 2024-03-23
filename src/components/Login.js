@@ -1,13 +1,13 @@
 import React from "react";
-import {Link } from 'react-router-dom';
+import {Link, useHistory } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../CSS/login.css';
 import { useState } from "react";
-function Login() {
+function Login({ handleLogin }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-
+    const history = useHistory();
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -23,7 +23,9 @@ function Login() {
             if (response.ok) {
                 const data = await response.json();
                 const {firstName} = data;
-                window.location.href = `/Profile?firstName=${firstName}`;
+                handleLogin();
+                history.push(`/profile?firstName=${firstName}`);
+                // window.location.href = `/Profile?firstName=${firstName}`;
             } else {
                 alert('Login failed. Please check your login credentials');
             }
@@ -37,11 +39,11 @@ function Login() {
             <div className="login-span">            
                 <form onSubmit={handleSubmit}>
                     <div className="mb-2">
-                        <label for="username">Username:</label>
+                        <label htmlFor="username">Username:</label>
                         <br/> <input className="username-input" type="username" placeholder="Enter Username" name="username" onChange={e => setUsername(e.target.value)}/> <br/> 
                     </div>
                     <div>
-                        <label for="password">Password:</label>
+                        <label htmlFor="password">Password:</label>
                         <br/> <input className="password-input" type={showPassword ? "text" : "password"} placeholder="Enter Password" value={password} onChange={e => setPassword(e.target.value)}/> <br/>
                         <label>
                             <input className="checkbox" type="checkbox" id="showPassword" name="showPassword" checked={showPassword} onChange={() => setShowPassword(!showPassword)}/>
