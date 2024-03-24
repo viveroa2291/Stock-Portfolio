@@ -1,0 +1,13 @@
+.profile-header {
+    text-align: center;
+}
+.stock-table {
+    border: solid 1px black;
+    width: max-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+th, tr, td {
+    border: solid 1px black;
+}

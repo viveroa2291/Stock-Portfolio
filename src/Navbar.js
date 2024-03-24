@@ -9,11 +9,12 @@ function Navbar ({ isAuthenticated, handleLogout }) {
                 <Link className="home-logo" to="/"><img className="logo" src={logo} alt="This will be the main logo"/></Link>
             </span>
             <span className="nav-container">
-                <button className="links"><Link className="about-button" to="/About">About</Link></button>
+                <Link className="links" to="/Stocks">Stocks</Link>
+                <Link className="links about-button" to="/About">About</Link>
                 {isAuthenticated ? (
-                    <button className="links" onClick={handleLogout}>Log Out</button>
+                    <Link className="links" to="/Login" onClick={handleLogout}>Log Out</Link>
                 ) : (
-                    <button className="links"><Link className="login-button" to="/Login">Login</Link></button>
+                    <Link className="links login-button" to="/Login">Login</Link>
                 )}
             </span>
         </div>
