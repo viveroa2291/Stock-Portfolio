@@ -11,3 +11,6 @@
 th, tr, td {
     border: solid 1px black;
 }
+.shares {
+    text-align: center;
+}
