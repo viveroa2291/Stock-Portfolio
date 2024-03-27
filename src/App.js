@@ -8,6 +8,7 @@ import About from './About';
 import { useState } from 'react';
 import  Navbar from './Navbar';
 import Stocks from './components/Stocks';
+import Explore from './components/Explore';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/about" component={About}/>
         <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} /> )} />
         <Route path="/stocks" component={Stocks}/>
+        <Route path="/explore" component={Explore}/>
         <Route path="/" component={Home} />
       </Switch>
     </div>

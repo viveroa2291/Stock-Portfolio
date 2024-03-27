@@ -11,7 +11,7 @@ function Profile({ isAuthenticated }) {
     return(
         <div>
             <div className='profile-header'>
-                <p>Welcome {firstName}</p>
+                <p>Welcome {firstName}, here is your portfolio</p>
             </div>
             <div className='stock-table'>
                 <table>

@@ -1,18 +1,19 @@
 import React from "react";
 import {Link} from 'react-router-dom';
-import logo from './images/logo.png';
 import './footer.css';
 function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return(
         <div className="footer">
-            <span className="footer-logo">
-                <Link className="home-logo" to="/"><img className="logo footer-image" src={logo} alt="This will be the main logo"/></Link>
-            </span>
-            <span className="footer-container">
-                <button className="footer-links"><Link className="about-button" to="/About">About</Link></button>
-                <br/>
-                <button className="footer-links"><Link className="login-button" to="/Login">Login</Link></button>
-            </span>
+            <div className="footer-container">
+                    <Link className="footer-buttons" to="/">Home</Link>
+                    <br/>
+                    <Link className="footer-buttons" to="/About">About</Link>
+                    <br/>
+                    <Link className="footer-buttons" to="/Explore">Explore</Link>
+            </div>
+            <p className="copyright">All Rights Reserve Copyright © {currentYear} <br/> Created by Adan Vivero</p>
         </div>
     )
 }
