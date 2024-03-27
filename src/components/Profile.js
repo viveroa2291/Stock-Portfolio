@@ -1,10 +1,12 @@
 import React from 'react';
 import { Redirect} from 'react-router-dom';
 import '../CSS/profile.css';
-function Profile({ isAuthenticated }) {
+
+function Profile({ isAuthenticated, firstName }) {
+    /*
     const urlParams = new URLSearchParams(window.location.search);
     const firstName = urlParams.get('firstName');
-
+*/
     if(!isAuthenticated) {
         return <Redirect to="/login" />;  
     }

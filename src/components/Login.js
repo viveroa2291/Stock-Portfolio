@@ -22,9 +22,10 @@ function Login({ handleLogin }) {
             
             if (response.ok) {
                 const data = await response.json();
-                const {firstName} = data;
-                handleLogin();
-                history.push(`/profile?firstName=${firstName}`);
+                handleLogin(data.firstName);
+                history.push('/profile');
+                // const {firstName} = data;
+                // history.push(`/profile?firstName=${firstName}`);
             } else {
                 alert('Login failed. Please check your login credentials');
             }

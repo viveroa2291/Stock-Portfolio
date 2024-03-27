@@ -11,13 +11,17 @@ import Stocks from './components/Stocks';
 import Explore from './components/Explore';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [firstName, setFirstName] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = (firstName) => {
       setIsAuthenticated(true);
+      setFirstName(firstName);
+      localStorage.setItem('isAuthenticated', true); // Store userId in localStorage
   };
 
   const handleLogout = () => {
     setIsAuthenticated(false);
+    localStorage.removeItem('isAuthenticated'); 
   }
 
   return (
@@ -27,7 +31,7 @@ function App() {
         <Route path="/login" render={(props) => <Login {...props} handleLogin={handleLogin} />} />
         <Route path="/signup" component={Signup}/>
         <Route path="/about" component={About}/>
-        <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} /> )} />
+        <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName}/> )} />
         <Route path="/stocks" component={Stocks}/>
         <Route path="/explore" component={Explore}/>
         <Route path="/" component={Home} />
