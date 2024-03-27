@@ -32,7 +32,7 @@ function App() {
         <Route path="/signup" component={Signup}/>
         <Route path="/about" component={About}/>
         <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName}/> )} />
-        <Route path="/stocks" component={Stocks}/>
+        <Route path="/stocks" render={(props) => (<Stocks {...props} isAuthenticated={isAuthenticated} />)} />
         <Route path="/explore" component={Explore}/>
         <Route path="/" component={Home} />
       </Switch>
