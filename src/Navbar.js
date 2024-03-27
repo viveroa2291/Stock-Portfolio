@@ -13,7 +13,7 @@ function Navbar ({ isAuthenticated, handleLogout }) {
                 { isAuthenticated && <Link className="links" to="/Stocks">Stocks</Link> }
                 <Link className="links" to="/Explore">Explore</Link>
                 <Link className="links" to="/About">About</Link>
-                <Link className="links" to="/Profile">Profile</Link>
+                { isAuthenticated && <Link className="links" to="/Profile">Profile</Link> }
                 {isAuthenticated ? (
                     <Link className="links" to="/Login" onClick={handleLogout}>Log Out</Link>
                 ) : (

@@ -25,7 +25,6 @@ function Login({ handleLogin }) {
                 const {firstName} = data;
                 handleLogin();
                 history.push(`/profile?firstName=${firstName}`);
-                // window.location.href = `/Profile?firstName=${firstName}`;
             } else {
                 alert('Login failed. Please check your login credentials');
             }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect} from 'react-router-dom';
 import '../CSS/profile.css';
 function Profile({ isAuthenticated }) {
     const urlParams = new URLSearchParams(window.location.search);
@@ -11,7 +11,7 @@ function Profile({ isAuthenticated }) {
     return(
         <div>
             <div className='profile-header'>
-                <p>Welcome {firstName}, here is your portfolio</p>
+                <p>Welcome {firstName}, here is your portfolio</p> 
             </div>
             <div className='stock-table'>
                 <table>
