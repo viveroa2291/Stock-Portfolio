@@ -22,7 +22,9 @@ function Login({ handleLogin }) {
             
             if (response.ok) {
                 const data = await response.json();
-                handleLogin(data.firstName);
+                handleLogin(data.firstName, data.lastName, data.username);
+                console.log("This is the first name: " + data.firstName + " Test");
+                console.log("This is the username: " + data.username + " Test"); 
                 history.push('/profile');
                 // const {firstName} = data;
                 // history.push(`/profile?firstName=${firstName}`);

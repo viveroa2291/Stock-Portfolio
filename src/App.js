@@ -12,10 +12,14 @@ import Explore from './components/Explore';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('');
 
-  const handleLogin = (firstName) => {
+  const handleLogin = (firstName, lastName, username) => {
       setIsAuthenticated(true);
       setFirstName(firstName);
+      setLastName(lastName);
+      setUsername(username);
       localStorage.setItem('isAuthenticated', true); // Store userId in localStorage
   };
 
@@ -31,7 +35,7 @@ function App() {
         <Route path="/login" render={(props) => <Login {...props} handleLogin={handleLogin} />} />
         <Route path="/signup" component={Signup}/>
         <Route path="/about" component={About}/>
-        <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName}/> )} />
+        <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName} lastName={lastName} username={username} /> )} />
         <Route path="/stocks" render={(props) => (<Stocks {...props} isAuthenticated={isAuthenticated} />)} />
         <Route path="/explore" component={Explore}/>
         <Route path="/" component={Home} />

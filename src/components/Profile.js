@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect} from 'react-router-dom';
 import '../CSS/profile.css';
 
-function Profile({ isAuthenticated, firstName }) {
+function Profile({ isAuthenticated, firstName, lastName, username}) {
     /*
     const urlParams = new URLSearchParams(window.location.search);
     const firstName = urlParams.get('firstName');
@@ -13,7 +13,7 @@ function Profile({ isAuthenticated, firstName }) {
     return(
         <div>
             <div className='profile-header'>
-                <p>Welcome {firstName}, here is your portfolio</p> 
+                <p>Welcome {firstName} {lastName} {username}, here is your portfolio</p> 
             </div>
             <div className='stock-table'>
                 <table>
