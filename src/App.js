@@ -6,7 +6,7 @@ import Profile from './components/Profile';
 import Home from './Home';
 import About from './About';
 import { useState } from 'react';
-import  Navbar from './Navbar';
+import  NavBar from './NavBar';
 import Stocks from './components/Stocks';
 import Explore from './components/Explore';
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div>    
-      <Navbar isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
+      <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} handleLogin={handleLogin} />} />
         <Route path="/signup" component={Signup}/>

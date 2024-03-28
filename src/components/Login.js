@@ -26,8 +26,6 @@ function Login({ handleLogin }) {
                 console.log("This is the first name: " + data.firstName + " Test");
                 console.log("This is the username: " + data.username + " Test"); 
                 history.push('/profile');
-                // const {firstName} = data;
-                // history.push(`/profile?firstName=${firstName}`);
             } else {
                 alert('Login failed. Please check your login credentials');
             }

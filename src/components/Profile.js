@@ -3,17 +3,13 @@ import { Redirect} from 'react-router-dom';
 import '../CSS/profile.css';
 
 function Profile({ isAuthenticated, firstName, lastName, username}) {
-    /*
-    const urlParams = new URLSearchParams(window.location.search);
-    const firstName = urlParams.get('firstName');
-*/
     if(!isAuthenticated) {
         return <Redirect to="/login" />;  
     }
     return(
         <div>
             <div className='profile-header'>
-                <p>Welcome {firstName} {lastName} {username}, here is your portfolio</p> 
+                <p>Welcome {firstName}, here is your portfolio</p> 
             </div>
             <div className='stock-table'>
                 <table>
