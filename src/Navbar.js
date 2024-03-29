@@ -11,7 +11,7 @@ function NavBar ({ isAuthenticated, handleLogout }) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto nav-container">
-                    { isAuthenticated && <Link className='links' >Add Stock</Link> }
+                    { isAuthenticated && <button className='links' >Add Stock</button> }
                     { isAuthenticated && <Link className='links' to="/Stocks">Stocks</Link> }
                     <Link className='links' to="/Explore">Explore</Link>
                     <Link className='links' to="/About">About</Link>
