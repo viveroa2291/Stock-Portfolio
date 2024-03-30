@@ -12,6 +12,8 @@ function Footer() {
                     <Link className="footer-buttons" to="/About">About</Link>
                     <br/>
                     <Link className="footer-buttons" to="/Explore">Explore</Link>
+                    <br/>
+                    <Link className="footer-buttons" to="/Login">Login</Link>
             </div>
             <p className="copyright">All Rights Reserve Copyright © {currentYear} <br/> Created by Adan Vivero</p>
         </div>

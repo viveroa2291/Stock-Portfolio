@@ -8,12 +8,11 @@
 .footer-container {
     position: absolute;
     right: 5rem;
-    top: 20%;
 }
 .footer-buttons {
     text-decoration: none;
     color: green;
-    font-size: 14px;
+    font-size: 12px;
 }
 .copyright { 
     margin-top: 3rem;
