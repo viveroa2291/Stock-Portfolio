@@ -3,14 +3,6 @@ import { Redirect} from 'react-router-dom';
 import '../CSS/profile.css';
 
 function Profile({ isAuthenticated, firstName, lastName, username}) {
-    fetch('https://api.polygon.io/v3/reference/dividends?ticker=ORC&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK')
-        .then(response => response.json()) 
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error fetching data: ', error);
-        });
     if(!isAuthenticated) {
         return <Redirect to="/login" />;  
     }

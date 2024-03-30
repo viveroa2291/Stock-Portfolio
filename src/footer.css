@@ -8,6 +8,7 @@
 .footer-container {
     position: absolute;
     right: 5rem;
+    top: 20%;
 }
 .footer-buttons {
     text-decoration: none;

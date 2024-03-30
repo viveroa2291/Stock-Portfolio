@@ -1,0 +1,21 @@
+.welcome-explore {
+    text-align: center;
+}
+.search-bar {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+.stock-ticker {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    border: solid black 2px;
+    width: 5%;
+    font-size: 12px;
+}
+.stock-data {
+    text-align: center;
+}
