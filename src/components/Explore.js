@@ -36,7 +36,8 @@ function Explore() {
 
             const formattedYesterday = yesterday.toISOString().split('T')[0];
             console.log("Yesterdays Date: " + formattedYesterday);
-            const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${formattedYesterday}/${formattedYesterday}?adjusted=true&sort=asc&limit=1&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`);
+            // const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${formattedYesterday}/${formattedYesterday}?adjusted=true&sort=asc&limit=1&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`);
+            const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/2024-03-28/2024-03-28?adjusted=true&sort=asc&limit=1&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`); 
             const stockData = await response.json();
             setSelectedStock(stockData.results[0]);
             setSelectedTicker({ticker});
