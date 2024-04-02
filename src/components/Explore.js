@@ -5,6 +5,7 @@ function Explore() {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedTicker, setSelectedTicker] = useState(null);
     const [selectedStock, setSelectedStock] = useState(null);
+    const [showStockData, setShowStockData] = useState(false);
     useEffect(()  => {
         fetch('https://api.polygon.io/v3/reference/dividends?ticker=ORC&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK')
         .then(response => response.json()) 
@@ -41,20 +42,28 @@ function Explore() {
             const stockData = await response.json();
             setSelectedStock(stockData.results[0]);
             setSelectedTicker({ticker});
+            setShowStockData(true);
         } catch (error) {
             console.error('Error fetching the stock Data: ', error);
         };
+
+    }        
+    const handleSearchFocus = () => {
+        setShowStockData(false); // Hide stock data div when search bar is focused
+    }
+    const handleSearchBlur = () => {
+        setShowStockData(true); // Show stock data div when search bar loses focus
     }
     return (
         <div>
             <p className='welcome-explore'>Welcome to the Explore page.</p>
-            <input className='search-bar' type='text' placeholder='Search Stock...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+            <input className='search-bar' type='text' placeholder='Search Stock...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
             {searchQuery && filterData.length > 0 ? (
                 filterData.map((item) => (
-                <p className='stock-ticker' key={item.T} onClick={() => handleClick(item.T)}> {item.T}</p>
+                <p className='stock-ticker' key={item.T} onClick={() => handleClick(item.T)} style={{margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}> {item.T}</p>
             ))
         ) : null }
-        { selectedTicker && (
+        { showStockData && selectedTicker && (
             <div className='stock-data'>
                 <p >Ticker: {selectedTicker.ticker}</p>        
                 { selectedStock && (
