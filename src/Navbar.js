@@ -31,14 +31,25 @@ function NavBar ({ isAuthenticated, handleLogout }) {
             </Navbar>
         <Modal show={showModal} onHide={toggleModal}>
             <Modal.Header closeButton>
-                <Modal.Title>Add Stock</Modal.Title>
+                <Modal.Title className="modal-title">Add Stock</Modal.Title>
             </Modal.Header>
-            <Modal.Body>
-                <input type="text" placeholder="Enter Stock" ></input>
+            <Modal.Body className="modal-body">
+                <label htmlFor="stock-ticker">Stock Ticker</label>
+                <br/>
+                <input className="stock-input" type="text" name="stock-ticker" placeholder="Enter Stock..."/>
+                <br/>
+                <label htmlFor="shares-number">Number of Shares</label>
+                <br/>
+                <input className="stock-input" type="text" name="shares-number" placeholder="Enter Number of Shares..."/>
+                <br/>
+                <label htmlFor="bought-price">Bought Price</label>
+                <br/>
+                <input className="stock-input" type="text" name="bought-price" placeholder="Enter Bought Price..."/>
+                <br/>
             </Modal.Body>
-            <Modal.Footer>
-                <Button variant="secondary" onClick={toggleModal}>Close</Button>
+            <Modal.Footer className="modal-footer">                
                 <Button variant="primary" >Save Changes</Button>
+                <Button variant="secondary" onClick={toggleModal}>Close</Button>
             </Modal.Footer>
         </Modal>
         </div>

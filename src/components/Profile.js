@@ -20,6 +20,8 @@ function Profile({ isAuthenticated, firstName, lastName, username}) {
                         <th>Average Cost</th>
                         <th>Price</th>
                         <th>Stock Growth</th>
+                        <th>Profit/Loss</th>
+                        <th>Annual Income</th>
                     </tr>
                     <tr>
                         <td>Apple</td>
@@ -28,6 +30,7 @@ function Profile({ isAuthenticated, firstName, lastName, username}) {
                         <td>54.99</td>
                         <td>300</td>
                         <td>18% </td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>JP Morgan Chase</td>
@@ -36,11 +39,18 @@ function Profile({ isAuthenticated, firstName, lastName, username}) {
                         <td>90</td>
                         <td>176.93</td>
                         <td>15%</td>
+                        <td></td>
+                        <td></td>
                     </tr>
                     <tr>
                         <td>Microsoft</td> 
                         <td>MSFT</td>             
-                        <td className='shares'>1</td>          
+                        <td className='shares'>1</td>        
+                        <td>0</td>  
+                        <td>400</td>
+                        <td>400%</td>
+                        <td></td>
+                        <td>3.96</td>
                     </tr>
                     <tr>
 

@@ -57,7 +57,7 @@ function Explore() {
         }            
         setTimeout(() => {
             setSearchBarFocused(false); 
-        }, 500);
+        }, 200);
     }
     return (
         <div>
