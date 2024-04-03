@@ -36,7 +36,7 @@ function Explore() {
             const yesterday = new Date();
             yesterday.setDate(yesterday.getDate() - 2); 
 
-            const formattedYesterday = yesterday.toISOString().split('T')[0];
+            // const formattedYesterday = yesterday.toISOString().split('T')[0];
             // const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/${formattedYesterday}/${formattedYesterday}?adjusted=true&sort=asc&limit=1&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`);
             const response = await fetch(`https://api.polygon.io/v2/aggs/ticker/${ticker}/range/1/day/2024-03-28/2024-03-28?adjusted=true&sort=asc&limit=1&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`); 
             const stockData = await response.json();
@@ -46,16 +46,18 @@ function Explore() {
         } catch (error) {
             console.error('Error fetching the stock Data: ', error);
         };
-    }        
+    }     
     const handleSearchFocus = () => {
         setShowStockData(false); // Hide stock data div when search bar is focused
         setSearchBarFocused(true);
     }
     const handleSearchBlur = () => {
         if(!searchQuery) {
-            setShowStockData(true); // Show stock data div when search bar loses focus
-        }
-        setSearchBarFocused(false);
+                setShowStockData(true);
+        }            
+        setTimeout(() => {
+            setSearchBarFocused(false); 
+        }, 500);
     }
     return (
         <div>
