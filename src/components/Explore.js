@@ -62,7 +62,7 @@ function Explore() {
     return (
         <div>
             <p className='welcome-explore'>Welcome to the Explore page.</p>
-            <input className='search-bar' type='text' placeholder='Search Stock...' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
+            <input className='search-bar' type='text' placeholder='Search for a Stock' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
             { searchBarFocused && searchQuery && filterData.length > 0 ? (
                 filterData.map((item) => (
                 <p className='stock-ticker' key={item.T} onClick={() => handleClick(item.T)} style={{margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>{item.T}</p>

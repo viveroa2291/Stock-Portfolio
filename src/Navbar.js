@@ -1,9 +1,14 @@
-import React from "react";
-import {Nav, Navbar} from 'react-bootstrap';
+import React, { useState } from "react";
+import {Nav, Navbar, Modal, Button} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import logo from './images/logo.png';
 import './navbar.css';
 function NavBar ({ isAuthenticated, handleLogout }) {
+    const [showModal, setShowModal] = useState(false);
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
     return (
         <div className="navbar-body">
             <Navbar collapseOnSelect expand="lg" variant="primary" className='navigation-bar'>
@@ -11,7 +16,7 @@ function NavBar ({ isAuthenticated, handleLogout }) {
             <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto nav-container">
-                    { isAuthenticated && <button className='links' >Add Stock</button> }
+                    { isAuthenticated && <button className='links' onClick={toggleModal}>Add Stock</button> }
                     { isAuthenticated && <Link className='links' to="/Stocks">Stocks</Link> }
                     <Link className='links' to="/Explore">Explore</Link>
                     <Link className='links' to="/About">About</Link>
@@ -24,7 +29,18 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                 </Nav> 
             </Navbar.Collapse>
             </Navbar>
-
+        <Modal show={showModal} onHide={toggleModal}>
+            <Modal.Header closeButton>
+                <Modal.Title>Add Stock</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+                <input type="text" placeholder="Enter Stock" ></input>
+            </Modal.Body>
+            <Modal.Footer>
+                <Button variant="secondary" onClick={toggleModal}>Close</Button>
+                <Button variant="primary" >Save Changes</Button>
+            </Modal.Footer>
+        </Modal>
         </div>
     )
 }
