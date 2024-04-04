@@ -1,0 +1,6 @@
+.stocks-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    font-size: 12px;
+}

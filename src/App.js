@@ -9,6 +9,7 @@ import { useState } from 'react';
 import  NavBar from './NavBar';
 import Stocks from './components/Stocks';
 import Explore from './components/Explore';
+import Dividends from './components/Dividends';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [firstName, setFirstName] = useState('');
@@ -38,6 +39,7 @@ function App() {
         <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName} lastName={lastName} username={username} /> )} />
         <Route path="/stocks" render={(props) => (<Stocks {...props} isAuthenticated={isAuthenticated} />)} />
         <Route path="/explore" component={Explore}/>
+        <Route path="/dividends" component={Dividends}/>
         <Route path="/" component={Home} />
       </Switch>
     </div>
