@@ -37,7 +37,7 @@ function App() {
         <Route path="/signup" component={Signup}/>
         <Route path="/about" component={About}/>
         <Route path="/profile" render={(props) => ( <Profile {...props} isAuthenticated={isAuthenticated} firstName={firstName} lastName={lastName} username={username} /> )} />
-        <Route path="/stocks" render={(props) => (<Stocks {...props} isAuthenticated={isAuthenticated} />)} />
+        <Route path="/stocks" render={(props) => (<Stocks {...props} isAuthenticated={isAuthenticated} firstName={firstName} lastName={lastName} username={username} />)} />
         <Route path="/explore" component={Explore}/>
         <Route path="/dividends" component={Dividends}/>
         <Route path="/" component={Home} />

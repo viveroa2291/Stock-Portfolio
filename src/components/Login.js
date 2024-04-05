@@ -25,7 +25,7 @@ function Login({ handleLogin }) {
                 handleLogin(data.firstName, data.lastName, data.username);
                 console.log("This is the first name: " + data.firstName + " Test");
                 console.log("This is the username: " + data.username + " Test"); 
-                history.push('/profile');
+                history.push('/stocks');
             } else {
                 alert('Login failed. Please check your login credentials');
             }
