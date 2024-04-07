@@ -10,7 +10,7 @@
 }
 .nav-container {
     position: absolute;
-    right: 0;
+    right: .5rem;
     margin-top: 1rem;
 }
 .links {
@@ -22,6 +22,13 @@
     color: white;
     font-size: 14px;
     border: none;
+}
+.dropDown {
+    margin-left: 1rem;
+}
+.user-logo {
+    height: 30px;
+    padding: 5px;
 }
 .modal-title {
     display: block;

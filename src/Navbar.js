@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import {Nav, Navbar, Modal, Button} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import {Nav, Navbar, Modal, Button, Dropdown} from 'react-bootstrap';
+import {Link, useLocation} from 'react-router-dom';
 import logo from './images/logo.png';
+import user from './images/user.png';
 import './navbar.css';
 function NavBar ({ isAuthenticated, handleLogout }) {
     const [showModal, setShowModal] = useState(false);
+    const location = useLocation();
 
     const toggleModal = () => {
         setShowModal(!showModal);
@@ -16,17 +18,24 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto nav-container">
-                        { isAuthenticated && <button className='links' onClick={toggleModal}>Add Stock</button> }
+                        { location.pathname === "/Stocks" && isAuthenticated && <button className='links' onClick={toggleModal}>Add Stock</button> }
                         { isAuthenticated && <Link className='links' to="/Stocks">Stocks</Link> }
                         { isAuthenticated && <Link className='links' to="/Dividends">Dividends</Link> }
                         <Link className='links' to="/Explore">Explore</Link>
                         <Link className='links' to="/About">About</Link>
                         { isAuthenticated && <Link className="links" to="/Profile">Profile</Link>}
-                        { isAuthenticated ? (
-                            <Link className="links" to="/Login" onClick={handleLogout}>Log Out</Link> 
-                        ) : (
-                            <Link className="links" to="/Login">Login</Link>
-                        )}
+                        { isAuthenticated ?
+                        <Dropdown className="dropDown">
+                             <Dropdown.Toggle className="settings-button" variant="success">
+                                <img className="user-logo" src={user} alt="User Logo"/> 
+                             </Dropdown.Toggle>
+                             <Dropdown.Menu>
+                                   <Dropdown.Item className="dropdown-item" onClick={handleLogout}>Logout</Dropdown.Item> 
+                             </Dropdown.Menu>
+                        </Dropdown>
+                        : 
+                        <Link className="links" to="/Login">Login</Link>
+                        }
                     </Nav> 
                 </Navbar.Collapse>
             </Navbar>
