@@ -23,14 +23,14 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                         { isAuthenticated && <Link className='links' to="/Dividends">Dividends</Link> }
                         <Link className='links' to="/Explore">Explore</Link>
                         <Link className='links' to="/About">About</Link>
-                        { isAuthenticated && <Link className="links" to="/Profile">Profile</Link>}
                         { isAuthenticated ?
                         <Dropdown className="dropDown">
-                             <Dropdown.Toggle className="settings-button" variant="success">
+                             <Dropdown.Toggle className="settings-button" >
                                 <img className="user-logo" src={user} alt="User Logo"/> 
                              </Dropdown.Toggle>
-                             <Dropdown.Menu>
-                                   <Dropdown.Item className="dropdown-item" onClick={handleLogout}>Logout</Dropdown.Item> 
+                             <Dropdown.Menu className="dropdown-menu">
+                                   <Dropdown.Item className="dropdown-items" to="/Profile"><Link className="profile-link" to="/Profile">Profile</Link></Dropdown.Item> 
+                                   <Dropdown.Item className="dropdown-items" onClick={handleLogout}>Logout</Dropdown.Item> 
                              </Dropdown.Menu>
                         </Dropdown>
                         : 

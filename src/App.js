@@ -6,7 +6,7 @@ import Profile from './components/Profile';
 import Home from './Home';
 import About from './About';
 import { useState } from 'react';
-import  NavBar from './NavBar';
+import  NavBar from './Navbar';
 import Stocks from './components/Stocks';
 import Explore from './components/Explore';
 import Dividends from './components/Dividends';

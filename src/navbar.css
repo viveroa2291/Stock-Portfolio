@@ -26,6 +26,20 @@
 .dropDown {
     margin-left: 1rem;
 }
+.settings-button {
+    background-color: lightgreen;
+    border: solid white 1px;
+}
+.settings-button:hover {
+    background-color: lightgreen; 
+}
+.dropdown-menu {
+    border: solid 3px red;
+}
+.profile-link {
+    color: black;
+    text-decoration: none;
+}
 .user-logo {
     height: 30px;
     padding: 5px;
