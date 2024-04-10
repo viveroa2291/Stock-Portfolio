@@ -29,7 +29,8 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                                 <img className="user-logo" src={user} alt="User Logo"/> 
                              </Dropdown.Toggle>
                              <Dropdown.Menu className="dropdown-menu">
-                                   <Dropdown.Item className="dropdown-items" to="/Profile"><Link className="profile-link" to="/Profile">Profile</Link></Dropdown.Item> 
+                                   <Dropdown.Item className="dropdown-items"><Link className="profile-link" to="/Profile">Profile</Link></Dropdown.Item> 
+                                   <Dropdown.Item className="dropdown-items"><Link className="profile-link" to="/Settings">Settings</Link></Dropdown.Item>
                                    <Dropdown.Item className="dropdown-items" onClick={handleLogout}>Logout</Dropdown.Item> 
                              </Dropdown.Menu>
                         </Dropdown>
