@@ -1,0 +1,27 @@
+.settings-header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    border: solid .5px black;
+    border-radius: 5px;
+}
+.settings-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    border: solid .5px black;
+    border-radius: 5px;
+}
+.settings-input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+.settings-label {
+    width: 25%;
+    margin-left: 2rem;
+    margin-top: 1rem;
+}
