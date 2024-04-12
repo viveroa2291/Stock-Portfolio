@@ -22,7 +22,7 @@ function Settings ({isAuthenticated, firstName, lastName, username}) {
                 <input className='settings-input'></input>                
                 <label className='settings-label'>Change Password</label>
                 <input className='settings-input'></input>
-                <button>Save</button>
+                <button className='btn btn-dark setting-save-button btn-primary'>Save</button>
             </div>
         </div>
     )

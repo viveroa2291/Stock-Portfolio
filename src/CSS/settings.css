@@ -25,3 +25,10 @@
     margin-left: 2rem;
     margin-top: 1rem;
 }
+.setting-save-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
