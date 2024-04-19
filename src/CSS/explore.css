@@ -23,3 +23,9 @@
     text-align: center;
     margin-top: 3rem;
 }
+.stock-data-table {
+    margin: auto;
+}
+td {
+    padding: .5rem 1rem;
+}

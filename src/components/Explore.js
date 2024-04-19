@@ -68,17 +68,17 @@ function Explore() {
                 <p className='stock-ticker' key={item.T} onClick={() => handleClick(item.T)} style={{margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>{item.T}</p>
             ))
         ) : null }
-        { searchQuery && showStockData && selectedTicker && (
+        { searchQuery && showStockData && selectedTicker && selectedStock && (
             <div className='stock-data'>
-                <p >Ticker: {selectedTicker.ticker}</p>        
-                { selectedStock && (
-                    <>
-                    <p>Opening Price: {selectedStock.o}</p>
-                    <p>Close Price: {selectedStock.c}</p>
-                    <p>High Price: {selectedStock.h}</p>
-                    <p>Low Price: {selectedStock.l}</p>
-                    </>
-                )}     
+                <table className='stock-data-table'>
+                    <tbody>
+                        <tr><th>Ticker: {selectedTicker.ticker}</th></tr>
+                        <tr><td>Opening Price: {selectedStock.o}</td></tr>
+                        <tr><td>Close Price: {selectedStock.c}</td> </tr>
+                        <tr><td>High Price: {selectedStock.h}</td></tr>
+                        <tr><td>Low Price: {selectedStock.l}</td></tr> 
+                    </tbody>
+                </table>
             </div>
         )}
         </div>
