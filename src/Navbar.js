@@ -18,7 +18,7 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mr-auto nav-container">
-                        { location.pathname === "/Stocks" && isAuthenticated && <button className='links' onClick={toggleModal}>Add Stock</button> }
+                        { location.pathname === "/Stocks" && isAuthenticated && <button className='links' onClick={toggleModal} title="Add a Stock to your portfolio.">Add Stock</button> }
                         { isAuthenticated && <Link className='links' to="/Stocks">Stocks</Link> }
                         { isAuthenticated && <Link className='links' to="/Dividends">Dividends</Link> }
                         <Link className='links' to="/Explore">Explore</Link>
@@ -31,11 +31,11 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                              <Dropdown.Menu className="dropdown-menu">
                                    <Dropdown.Item className="dropdown-items"><Link className="profile-link" to="/Profile">Profile</Link></Dropdown.Item> 
                                    <Dropdown.Item className="dropdown-items"><Link className="profile-link" to="/Settings">Settings</Link></Dropdown.Item>
-                                   <Dropdown.Item className="dropdown-items" onClick={handleLogout}>Logout</Dropdown.Item> 
+                                   <Dropdown.Item className="dropdown-items" onClick={handleLogout} title="Log out of your account.">Logout</Dropdown.Item> 
                              </Dropdown.Menu>
                         </Dropdown>
                         : 
-                        <Link className="links" to="/Login">Login</Link>
+                        <Link className="links" to="/Login" title="Log in to your account.">Login</Link>
                         }
                     </Nav> 
                 </Navbar.Collapse>
@@ -53,7 +53,7 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                 <br/>
                 <input className="stock-input" type="text" name="shares-number" placeholder="Enter Number of Shares..."/>
                 <br/>
-                <label htmlFor="bought-price">Bought Price</label>
+                <label htmlFor="bought-price">Price Bought</label>
                 <br/>
                 <input className="stock-input" type="text" name="bought-price" placeholder="Enter Bought Price..."/>
                 <br/>
