@@ -7,6 +7,7 @@ function Explore() {
     const [selectedStock, setSelectedStock] = useState(null);
     const [showStockData, setShowStockData] = useState(false);
     const [searchBarFocused, setSearchBarFocused] = useState(false);
+    const [showStockName, setStockName] = useState(false);
     useEffect(()  => {
         fetch('https://api.polygon.io/v3/reference/dividends?ticker=ORC&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK')
         .then(response => response.json()) 
@@ -43,17 +44,22 @@ function Explore() {
             setSelectedStock(stockData.results[0]);
             setSelectedTicker({ticker});
             setShowStockData(true);
+
+            const nameResponse = await fetch(`https://api.polygon.io/v3/reference/tickers?ticker=${ticker}&active=true&apiKey=1PLJT6aBkJqCXlmfbX6lqa0bp6WzEHTK`); 
+            const stockName = await nameResponse.json();
+            setStockName(stockName.results[0]);
+            console.log("This is the stock name: " + stockName.results[0].name);
         } catch (error) {
             console.error('Error fetching the stock Data: ', error);
         };
-    }     
+    }
     const handleSearchFocus = () => {
         setShowStockData(false); // Hide stock data div when search bar is focused
         setSearchBarFocused(true);
     }
     const handleSearchBlur = () => {
         if(!searchQuery) {
-                setShowStockData(true);
+            setShowStockData(true);
         }            
         setTimeout(() => {
             setSearchBarFocused(false); 
@@ -68,11 +74,12 @@ function Explore() {
                 <p className='stock-ticker' key={item.T} onClick={() => handleClick(item.T)} style={{margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>{item.T}</p>
             ))
         ) : null }
-        { searchQuery && showStockData && selectedTicker && selectedStock && (
+        { searchQuery && showStockData && selectedTicker && selectedStock && showStockName && (
             <div className='stock-data'>
                 <table className='stock-data-table'>
                     <tbody>
-                        <tr><th>Ticker: {selectedTicker.ticker}</th></tr>
+                        <tr><th>{showStockName.name}</th></tr>
+                        <tr><td>Ticker: {selectedTicker.ticker}</td></tr>
                         <tr><td>Opening Price: {selectedStock.o}</td></tr>
                         <tr><td>Close Price: {selectedStock.c}</td> </tr>
                         <tr><td>High Price: {selectedStock.h}</td></tr>

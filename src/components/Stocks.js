@@ -51,9 +51,6 @@ function Stocks ({isAuthenticated, firstName, lastName, username}) {
                         <td></td>
                         <td>3.96</td>
                     </tr>
-                    <tr>
-
-                    </tr>
                 </table>
             </div>
         </div>

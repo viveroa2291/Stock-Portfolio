@@ -25,6 +25,7 @@
 }
 .dropDown {
     margin-left: 1rem;
+    margin-right: 1rem;
 }
 .settings-button {
     background-color: lightgreen;
@@ -34,7 +35,8 @@
     background-color: lightgreen; 
 }
 .dropdown-menu {
-    border: solid 3px red;
+    border: solid 2px black;
+    text-align: center;
 }
 .profile-link {
     color: black;
@@ -56,11 +58,23 @@
 }
 .stock-input {
     margin-bottom: 1rem;
+    text-align: center;
 }
 .modal-footer {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+.enter-stock {
+    font-size: 9px;
+    text-align: center;
+    border: solid 1px black;
+    margin-top: -4rem;
+}
+.enter-stock:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }
 @media (max-width: 800px) { 
     .navbar-body {
