@@ -4,7 +4,7 @@ import {Link, useLocation} from 'react-router-dom';
 import logo from './images/logo.png';
 import user from './images/user.png';
 import './navbar.css';
-function NavBar ({ isAuthenticated, handleLogout }) {
+function NavBar ({ isAuthenticated, handleLogout, username}) {
     const [data, setData] = useState(null);    
     const [showModal, setShowModal] = useState(false);
     const location = useLocation();
@@ -14,6 +14,10 @@ function NavBar ({ isAuthenticated, handleLogout }) {
     const [selectedStock, setSelectedStock] = useState(null);
     const [showStockData, setShowStockData] = useState(false);
     const [showStockName, setStockName] = useState(false);
+
+    const [ticker, setTicker] = useState('');
+    const [numberOfShares, setNumberOfShares] = useState('');
+    const [priceBought, setPriceBought] = useState('');
 
     const toggleModal = () => {
         setShowModal(!showModal);
@@ -74,6 +78,31 @@ function NavBar ({ isAuthenticated, handleLogout }) {
             setSearchBarFocused(false); 
         }, 200);
     }
+    const handleSaveChanges = async () => {
+        try {
+            const response = await fetch('/api/addStock', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    id: username, // Assuming you have the userId stored in a variable
+                    ticker: ticker,
+                    numberOfShares: numberOfShares,
+                    priceBought: priceBought
+                })
+            });
+            if (response.ok) {
+                // Handle success
+                toggleModal(); // Close the modal after successful addition
+            } else {
+                // Handle failure
+                console.error('Failed to add stock');
+            }
+        } catch (error) {
+            console.error('Error saving changes:', error);
+        }
+    };
     return (
         <div className="navbar-body">
             <Navbar collapseOnSelect expand="lg" variant="primary" className='navigation-bar'>
@@ -110,7 +139,7 @@ function NavBar ({ isAuthenticated, handleLogout }) {
             <Modal.Body className="modal-body">
                 <label htmlFor="stock-ticker">Stock Ticker</label>
                 <br/>
-                <input className="stock-input" type="text" name="stock-ticker" placeholder="Enter Stock..." title="Enter a stock ticker." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} onFocus={handleSearchFocus} onBlur={handleSearchBlur}/>
+                <input className="stock-input" type="text" name="stock-ticker" placeholder="Enter Stock..." title="Enter a stock ticker." value={searchQuery} onChange={(e) => {setSearchQuery(e.target.value); setTicker(e.target.value)}} onFocus={handleSearchFocus} onBlur={handleSearchBlur} />
                 { searchBarFocused && searchQuery && filterData.length > 0 ? (
                     filterData.map((item) => (
                         <p className="enter-stock" key={item.T} onClick={() => handleClick(item.T)} style={{margin: '0', display: 'block', marginLeft: 'auto', marginRight: 'auto'}}>{item.T}</p>
@@ -119,15 +148,15 @@ function NavBar ({ isAuthenticated, handleLogout }) {
                 <br/>
                 <label htmlFor="shares-number">Number of Shares</label>
                 <br/>
-                <input className="stock-input" type="number" name="shares-number" placeholder="Enter Number of Shares..." title="Enter the number of shares."/>
+                <input className="stock-input" type="number" name="shares-number" placeholder="Enter Number of Shares..." title="Enter the number of shares." onChange={(e) => setNumberOfShares(e.target.value)} />
                 <br/>
                 <label htmlFor="bought-price">Price Bought</label>
                 <br/>
-                <input className="stock-input" type="text" name="bought-price" placeholder="Enter Bought Price..." title="Enter the price the stock was bought."/>
+                <input className="stock-input" type="text" name="bought-price" placeholder="Enter Bought Price..." title="Enter the price the stock was bought." onChange={(e) => setPriceBought(e.target.value)} />
                 <br/>
             </Modal.Body>
             <Modal.Footer className="modal-footer">                
-                <Button variant="primary" >Save Changes</Button>
+                <Button variant="primary" onClick={handleSaveChanges}>Save Changes</Button>
                 <Button variant="secondary" onClick={toggleModal}>Close</Button>
             </Modal.Footer>
         </Modal>
