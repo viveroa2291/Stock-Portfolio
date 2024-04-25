@@ -13,12 +13,14 @@ import Settings from './components/Settings';
 import Dividends from './components/Dividends';
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [userId, setUserId] = useState(null);
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
 
-  const handleLogin = (firstName, lastName, username) => {
+  const handleLogin = (userId, firstName, lastName, username) => {
       setIsAuthenticated(true);
+      setUserId(userId);
       setFirstName(firstName);
       setLastName(lastName);
       setUsername(username);
@@ -32,7 +34,7 @@ function App() {
 
   return (
     <div>    
-      <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
+      <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout} userId={userId} />
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} handleLogin={handleLogin} />} />
         <Route path="/signup" component={Signup}/>
