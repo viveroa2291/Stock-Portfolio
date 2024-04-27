@@ -4,7 +4,7 @@ import {Link, useLocation} from 'react-router-dom';
 import logo from './images/logo.png';
 import user from './images/user.png';
 import './navbar.css';
-function NavBar ({ isAuthenticated, handleLogout, userId}) {
+function NavBar ({ isAuthenticated, handleLogout, userId, firstName}) {
     const [data, setData] = useState(null);    
     const [showModal, setShowModal] = useState(false);
     const location = useLocation();
@@ -130,7 +130,7 @@ function NavBar ({ isAuthenticated, handleLogout, userId}) {
                     </Nav> 
                 </Navbar.Collapse>
             </Navbar>
-            <p>The id is: {userId}</p>
+            <p>The id is: {userId} and first name is {firstName}</p>
         <Modal show={showModal} onHide={toggleModal}>                
             <form onSubmit={handleSaveChanges}>
                 <Modal.Header closeButton>

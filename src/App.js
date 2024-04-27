@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div>    
-      <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout} userId={userId} />
+      <NavBar isAuthenticated={isAuthenticated} handleLogout={handleLogout} userId={userId} firstName={firstName} />
       <Switch>
         <Route path="/login" render={(props) => <Login {...props} handleLogin={handleLogin} />} />
         <Route path="/signup" component={Signup}/>
