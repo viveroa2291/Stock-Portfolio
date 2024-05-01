@@ -22,9 +22,7 @@ function Login({ handleLogin }) {
             
             if (response.ok) {
                 const data = await response.json();
-                handleLogin(data.firstName, data.lastName, data.username);
-                console.log("This is the first name: " + data.firstName + " Test");
-                console.log("This is the username: " + data.username + " Test"); 
+                handleLogin(data.firstName, data.lastName, data.username, data.userId);
                 history.push('/stocks');
             } else {
                 alert('Login failed. Please check your login credentials');

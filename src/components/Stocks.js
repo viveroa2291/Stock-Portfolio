@@ -13,14 +13,14 @@ function Stocks ({isAuthenticated, firstName, lastName, username, stocks}) {
             <div className='stock-table'>
                 <table>
                     <tr>
-                        <th>Stock</th>
-                        <th>Symbol</th>
-                        <th>Shares</th>
-                        <th>Average Cost</th>
-                        <th>Price</th>
-                        <th>Stock Growth</th>
-                        <th>Profit/Loss</th>
-                        <th>Annual Income</th>
+                        <th className='stock-header'>Stock</th>
+                        <th className='stock-header'>Symbol</th>
+                        <th className='stock-header'>Shares</th>
+                        <th className='stock-header'>Average Cost</th>
+                        <th className='stock-header'>Price</th>
+                        <th className='stock-header'>Stock Growth</th>
+                        <th className='stock-header'>Profit/Loss</th>
+                        <th className='stock-header'>Annual Income</th>
                     </tr>
                 </table>
             </div>

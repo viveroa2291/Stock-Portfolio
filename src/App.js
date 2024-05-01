@@ -18,13 +18,17 @@ function App() {
   const [lastName, setLastName] = useState('');
   const [username, setUsername] = useState('');
 
-  const handleLogin = (userId, firstName, lastName, username) => {
+  const handleLogin = (firstName, lastName, username, userId) => {
       setIsAuthenticated(true);
       setUserId(userId);
       setFirstName(firstName);
       setLastName(lastName);
       setUsername(username);
       localStorage.setItem('isAuthenticated', true); // Store userId in localStorage
+      console.log("userId: " + userId);
+      console.log("first Name: " + firstName);
+      console.log("last name: " + lastName);
+      console.log("username: " + username);
   };
 
   const handleLogout = () => {

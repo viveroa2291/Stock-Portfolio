@@ -18,7 +18,6 @@ function NavBar ({ isAuthenticated, handleLogout, userId, firstName}) {
     const[formData, setFormData] = useState({
         id: userId,  ticker: '', numberOfShares: '', priceBought: '' 
     })
-    console.log("The user id is: " + userId);
     const handleInputChange = (e) => {
         const {name, value} = e.target;
         setFormData({...formData, [name]:value})
