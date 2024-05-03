@@ -129,7 +129,6 @@ function NavBar ({ isAuthenticated, handleLogout, userId, firstName}) {
                     </Nav> 
                 </Navbar.Collapse>
             </Navbar>
-            <p>The id is: {userId} and first name is {firstName}</p>
         <Modal show={showModal} onHide={toggleModal}>                
             <form onSubmit={handleSaveChanges}>
                 <Modal.Header closeButton>
